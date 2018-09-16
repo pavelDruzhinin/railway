@@ -1,5 +1,4 @@
 ﻿using Railway.Domain;
-using Railway.Services.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -69,10 +68,5 @@ namespace Railway.Web.Models
 
             return ValidationResult.Success;
         }
-    }
-
-    public class PassengersViewModel
-    {
-        public List<PassengerDto> Passengers { get; set; }
     }
 }
