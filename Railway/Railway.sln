@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railway", "Railway\Railway.csproj", "{DA974A53-F3F8-42E9-9A45-F5BC92A93037}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railway.Data", "Railway.Data\Railway.Data.csproj", "{B31BABED-B287-4409-B79D-48C03BB255B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railway.Domain", "Railway.Domain\Railway.Domain.csproj", "{E110296C-B743-4D38-BF42-0C5DAC1C7B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railway.Services", "Railway.Services\Railway.Services.csproj", "{CCFFBF85-8408-4EED-872B-FAC90E88DD6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railway.Web", "Railway.Web\Railway.Web.csproj", "{DA974A53-F3F8-42E9-9A45-F5BC92A93037}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +17,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B31BABED-B287-4409-B79D-48C03BB255B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31BABED-B287-4409-B79D-48C03BB255B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31BABED-B287-4409-B79D-48C03BB255B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31BABED-B287-4409-B79D-48C03BB255B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E110296C-B743-4D38-BF42-0C5DAC1C7B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E110296C-B743-4D38-BF42-0C5DAC1C7B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E110296C-B743-4D38-BF42-0C5DAC1C7B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E110296C-B743-4D38-BF42-0C5DAC1C7B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCFFBF85-8408-4EED-872B-FAC90E88DD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFFBF85-8408-4EED-872B-FAC90E88DD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFFBF85-8408-4EED-872B-FAC90E88DD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFFBF85-8408-4EED-872B-FAC90E88DD6B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA974A53-F3F8-42E9-9A45-F5BC92A93037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DA974A53-F3F8-42E9-9A45-F5BC92A93037}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA974A53-F3F8-42E9-9A45-F5BC92A93037}.Release|Any CPU.ActiveCfg = Release|Any CPU

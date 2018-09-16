@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Railway
+namespace Railway.Web
 {
     public class RouteConfig
     {
@@ -16,7 +12,7 @@ namespace Railway
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Passenger", action = "Passengers", id = UrlParameter.Optional }
             );
         }
     }
