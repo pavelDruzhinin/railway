@@ -4,7 +4,7 @@ using Railway.Services.Infrastructure;
 using System.Reflection;
 using System.Web.Mvc;
 
-namespace Railway.Web.App_Start
+namespace Railway.Web
 {
     public static class AutofacConfig
     {

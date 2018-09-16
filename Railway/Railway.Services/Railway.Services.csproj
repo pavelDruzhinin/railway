@@ -55,7 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\BaseDto.cs" />
     <Compile Include="Dto\PassengerDto.cs" />
+    <Compile Include="Infrastructure\Enums\EnumExtensions.cs" />
     <Compile Include="Infrastructure\Mappings\PassengerDtoProfile.cs" />
     <Compile Include="Infrastructure\ServicesModule.cs" />
     <Compile Include="PassengerService.cs" />

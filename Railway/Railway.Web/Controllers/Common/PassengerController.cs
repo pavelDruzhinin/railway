@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace Railway.Web.Controllers
 {
-    [RoutePrefix("railway")]
     public class PassengerController : Controller
     {
         private readonly PassengerService _passengerService;
@@ -17,7 +16,7 @@ namespace Railway.Web.Controllers
         }
 
         [HttpGet]
-        [Route("info")]
+        [Route("railway/info")]
         public ActionResult Info(int? id)
         {
             if (!id.HasValue)
@@ -29,7 +28,7 @@ namespace Railway.Web.Controllers
         }
 
         [HttpPost]
-        [Route("info")]
+        [Route("railway/info")]
         public ActionResult Info(PassengerModel model)
         {
             if (!ModelState.IsValid)
@@ -39,11 +38,12 @@ namespace Railway.Web.Controllers
 
             _passengerService.SavePassenger(dto);
 
-            return Redirect("/");
+            return RedirectToAction("Passengers");
         }
 
         [HttpGet]
-        [Route("passengers")]
+        [Route("")]
+        [Route("railway/passengers")]
         public ActionResult Passengers()
         {
             return View(new PassengersViewModel

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Railway.Data;
+using Railway.Domain;
 using Railway.Services.Dto;
 using System;
 using System.Collections.Generic;
@@ -31,10 +32,16 @@ namespace Railway.Services
         {
             var passenger = _railwayContext.Passengers.FirstOrDefault(x => x.Id == dto.Id);
 
-            if (passenger == null)
-                throw new Exception("Не удалось найти указанного пассажира");
+            if (passenger != null)
+            {
+                Mapper.Map(dto, passenger);
+            }
+            else
+            {
+                passenger = Mapper.Map<Passenger>(dto);
+                _railwayContext.Passengers.Add(passenger);
+            }
 
-            Mapper.Map(dto, passenger);
             _railwayContext.SaveChanges();
         }
 

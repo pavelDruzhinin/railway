@@ -16,9 +16,9 @@
         {
             var passengers = new List<Passenger>
             {
-                new Passenger("Иванов Иван Иванович", new DateTime(1975, 01, 12)),
+                new Passenger("Иванов Иван Иванович", new DateTime(1975, 1, 12)),
                 new Passenger("Петров Иван Иванович", new DateTime(2015, 12, 12)),
-                new Passenger("Сидоров Иван Иванович", new DateTime(2012, 01, 15)),
+                new Passenger("Сидоров Иван Иванович", new DateTime(2012, 1, 15)),
             };
 
             context.Passengers.AddRange(passengers);

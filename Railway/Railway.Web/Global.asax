@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Railway.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Railway.Web.Global" Language="C#" %>

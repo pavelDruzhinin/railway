@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Railway.Domain
 {
@@ -12,36 +13,42 @@ namespace Railway.Domain
         public Passenger(string name, DateTime birthday)
         {
             Name = name;
-            Birthday = birthday;
+            BirthDay = birthday;
             Type = GetPassengerTypeByBirthDayYear(birthday.Year);
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime Birthday { get; }
         public PassengerType Type { get; set; }
         public DateTime BirthDay { get; set; }
 
         private PassengerType GetPassengerTypeByBirthDayYear(int year)
         {
-            if (year > 10)
-                return PassengerType.Adult;
+            var age = DateTime.Now.Year - year;
 
-            if (year > 5 && year <= 10)
-                return PassengerType.Child;
+            if (age < 0)
+                throw new ArgumentException();
 
-            if (year <= 5)
+            if (age <= 5)
                 return PassengerType.Baby;
 
-            throw new ArgumentException();
+            if (age > 5 && age <= 10)
+                return PassengerType.Child;
+            
+            return PassengerType.Adult;
         }
 
     }
 
     public enum PassengerType
     {
+        [Description("Не задан")]
+        NotSet,
+        [Description("Взрослый")]
         Adult,
+        [Description("Ребенок")]
         Child,
+        [Description("Младенец")]
         Baby
     }
 }

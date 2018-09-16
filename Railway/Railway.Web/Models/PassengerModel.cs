@@ -9,25 +9,37 @@ namespace Railway.Web.Models
 {
     public class PassengerModel
     {
-        public int Id { get; set; }
-        [RegularExpression("[А-Яа-я]")]
+        public int? Id { get; set; }
+
+        [Display(Name = "Имя пассажира")]
+        [RegularExpression("[А-Яа-я ]+", ErrorMessage = "Имя должно состоять только из русских букв")]
+        [Required(ErrorMessage = "Является обязательным")]
         public string Name { get; set; }
 
+        [Display(Name = "Тип пассажира")]
         public PassengerType Type { get; set; }
-        [PassengerBirthDay]
+
+        [Display(Name = "Дата рождения пассажира")]
+        [DataType(DataType.Date)]
+        [PassengerBirthDay(ErrorMessage = "Дата рождения должна соответствовать типу пассажира")]
+        [Required(ErrorMessage = "Является обязательным")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDay { get; set; }
 
         public bool IsBirthDayYearCorrespondPassengerType()
         {
-            var year = BirthDay.Year;
+            if (Type == PassengerType.NotSet)
+                return true;
+
+            var age = DateTime.Now.Year - BirthDay.Year;
             switch (Type)
             {
                 case PassengerType.Adult:
-                    return year > 10;
+                    return age > 10;
                 case PassengerType.Child:
-                    return year <= 10 && year > 5;
+                    return age <= 10 && age > 5;
                 case PassengerType.Baby:
-                    return year <= 5;
+                    return age <= 5 && age >= 0;
             }
 
             return false;
