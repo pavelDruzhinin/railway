@@ -157,6 +157,7 @@
     </Compile>
     <Compile Include="Infrastructure\Mappings\PassengerModelProfile.cs" />
     <Compile Include="Models\PassengerModel.cs" />
+    <Compile Include="Models\PassengersViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
