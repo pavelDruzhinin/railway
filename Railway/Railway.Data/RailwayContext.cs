@@ -6,6 +6,11 @@ namespace Railway.Data
 {
     public class RailwayContext : DbContext
     {
+        public RailwayContext()
+        {
+            Database.SetInitializer(new RailwayDBInitializer());
+        }
+
         public DbSet<Passenger> Passengers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -14,6 +19,5 @@ namespace Railway.Data
 
             modelBuilder.Configurations.Add(new PassengerMap());
         }
-
     }
 }
